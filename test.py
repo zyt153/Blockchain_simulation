@@ -1,4 +1,3 @@
-#https://blog.csdn.net/baidu_17508977/article/details/80570893
 import hashlib
 import json
 import time
@@ -80,9 +79,10 @@ class DadaCoinBlockChain:
     def valid_proof(preHash: str, proof: int) -> bool:  # 验证证明
         guess = f'{preHash+str(proof)}'.encode("utf-8")
         guess_hash = int(hashlib.sha256(guess).hexdigest(),16)
-        C = 0x1
-        A = 0x3e8
-        return guess_hash <= 0x000008fffffffd818d12a246c86a865f9eeb5d93d38b89fcb76022d2a2b * A * C
+        #C = 0x1
+        #A = 0x3e8
+        #return guess_hash <= 0x000008fffffffd818d12a246c86a865f9eeb5d93d38b89fcb76022d2a2b * A * C
+        return guess_hash <= 0x000008fffffffd818d12a246c86a865f9eeb5d93d38b89fcb76022d2a2b
 
     def register_node(self, addr: str) -> None:  # 加入网络的其他节点，用于更新
         now_url = urlparse(addr)
