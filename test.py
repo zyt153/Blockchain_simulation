@@ -82,6 +82,7 @@ class DadaCoinBlockChain:
         #C = 0x1
         #A = 0x3e8
         #return guess_hash <= 0x000008fffffffd818d12a246c86a865f9eeb5d93d38b89fcb76022d2a2b * A * C
+        #节点随机计算哈希值，如果哈希值小于下面的值则挖矿成功，阈值越小挖矿时间越长
         return guess_hash <= 0x000008fffffffd818d12a246c86a865f9eeb5d93d38b89fcb76022d2a2b
 
     def register_node(self, addr: str) -> None:  # 加入网络的其他节点，用于更新
