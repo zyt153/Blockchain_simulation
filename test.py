@@ -190,7 +190,7 @@ def new_node():
     values = request.get_json()
     nodes = values.get("nodes")
     if nodes is None:
-        return "你妹的啥数据", 400
+        return "数据错误", 400
     for node in nodes:
         datacoin.register_node(node)
     response = {
